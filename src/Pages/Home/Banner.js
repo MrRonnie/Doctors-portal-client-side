@@ -20,7 +20,7 @@ const Banner = () => {
             excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
             a id nisi.
           </p>
-          <button class="btn btn-primary uppercase text-white font-bold bg-gradient-to-r from-cyan-500 to-blue-500">
+          <button class="btn btn-primary uppercase text-white font-bold bg-gradient-to-r from-secondary to-primary">
             Get Started
           </button>
         </div>
