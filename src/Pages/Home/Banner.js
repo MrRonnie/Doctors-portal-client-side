@@ -4,7 +4,7 @@ import backgroundImg from "../../assets/images/bg.png";
 
 const Banner = () => {
   return (
-    <div class="hero min-h-screen">
+    <div class="hero min-h-screen justify-center">
       <div className="">
         <img className="w-full px-48" src={backgroundImg} alt="" />
       </div>
