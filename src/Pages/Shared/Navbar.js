@@ -25,7 +25,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div class="navbar ml-36 bg-base-100">
+    <div className="navbar justify-evenly">
       <div class="navbar-start">
         <div class="dropdown">
           <label tabindex="0" class="btn btn-ghost lg:hidden">
