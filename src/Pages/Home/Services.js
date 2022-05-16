@@ -5,6 +5,7 @@ import whitening from "../../assets/images/whitening.png";
 import treatment from "../../assets/images/treatment.png";
 
 import Service from "./Service";
+import PrimaryButton from "../Shared/PrimaryButton";
 
 const Services = () => {
   const services = [
@@ -44,7 +45,7 @@ const Services = () => {
         ))}
       </div>
 
-      <div class="hero min-h-screen justify-center ">
+      <div class="hero min-h-screen justify-center">
         <div class="hero-content flex-col lg:flex-row gap-14 px-24">
           <img src={treatment} class="max-w-sm rounded-lg shadow-2xl" />
           <div>
@@ -59,9 +60,7 @@ const Services = () => {
               here', making it look like readable English. Many desktop
               publishing packages and web page
             </p>
-            <button class="btn btn-primary uppercase text-white font-bold bg-gradient-to-r from-secondary to-primary">
-              Get Started
-            </button>
+            <PrimaryButton>Get Started</PrimaryButton>
           </div>
         </div>
       </div>
