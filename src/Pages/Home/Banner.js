@@ -9,12 +9,12 @@ const Banner = () => {
       <div className="">
         <img className="w-full h-full" src={backgroundImg} alt="" />
       </div>
-      <div className="hero-content flex-col lg:gap-32 lg:flex-row-reverse">
+      <div className="hero-content flex-col lg:gap-32 lg:flex-row-reverse px-5">
         <img
           src={chair}
           className="max-w-sm lg:max-w-lg rounded-lg shadow-2xl"
         />
-        <div>
+        <div className="">
           <h1 className="text-5xl font-bold">Your New Smile Starts Here</h1>
           <p className="py-6">
             Lorem Ipsum is simply dummy text of the printing and typesetting
