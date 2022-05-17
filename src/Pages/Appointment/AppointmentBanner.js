@@ -11,7 +11,7 @@ const AppointmentBanner = ({ date, setDate }) => {
         background: `url(${bg})`,
         backgroundSize: "cover",
       }}
-      class="hero min-h-screen"
+      class="hero lg:min-h-screen justify-around"
     >
       <div class="hero-content flex-col lg:flex-row-reverse">
         <img

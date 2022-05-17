@@ -14,11 +14,11 @@ const AvailableAppointments = ({ date }) => {
   }, []);
 
   return (
-    <div>
+    <div className="mt-20">
       <h4 className="text-xl text-secondary text-center">
         Available Appointment on {format(date, "PP")}
       </h4>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 text-center gap-5">
         {services.map((service) => (
           <Service
             key={service._id}
@@ -27,7 +27,13 @@ const AvailableAppointments = ({ date }) => {
           ></Service>
         ))}
       </div>
-      {treatment && <BookingModal treatment={treatment}></BookingModal>}
+      {treatment && (
+        <BookingModal
+          date={date}
+          treatment={treatment}
+          setTreatment={setTreatment}
+        ></BookingModal>
+      )}
     </div>
   );
 };
