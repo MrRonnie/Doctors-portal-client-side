@@ -13,13 +13,13 @@ const AppointmentBanner = ({ date, setDate }) => {
       }}
       className="hero lg:min-h-screen justify-around"
     >
-      <div className="hero-content flex-col lg:flex-row-reverse">
+      <div className="hero-content flex-col lg:flex-row-reverse gap-12">
         <img
           src={chair}
-          className="max-w-sm rounded-lg shadow-2xl"
+          className="max-w-lg rounded-lg shadow-xl"
           alt="Dentist Chair"
         />
-        <div>
+        <div className="card bg-base-100 shadow-xl ">
           <DayPicker mode="single" selected={date} onSelect={setDate} />
         </div>
       </div>
