@@ -6,11 +6,21 @@ import { useAuthState } from "react-firebase-hooks/auth";
 const BookingModal = ({ date, treatment, setTreatment }) => {
   const { _id, name, slots } = treatment;
   const [user, loading, error] = useAuthState(auth);
+  const formattedDate = format(date, "pp");
 
   const handleBooking = (event) => {
     event.preventDefault();
     const slot = event.target.slot.value;
     console.log(_id, name, slot);
+    const booking = {
+      treatmentId: _id,
+      treatment: name,
+      date: formattedDate,
+      slot,
+      patient: user.email,
+      patientName: user.displayName,
+      phone: event.target.phone.value,
+    };
     setTreatment(null);
   };
   return (
@@ -25,7 +35,7 @@ const BookingModal = ({ date, treatment, setTreatment }) => {
             ✕
           </label>
 
-          <h3 className="font-bold text-lg text-secondary text-center">
+          <h3 className="font-semibold text-lg text-secondary text-center">
             Booking for: {name}
           </h3>
           <form
