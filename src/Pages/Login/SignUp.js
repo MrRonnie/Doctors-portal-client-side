@@ -23,7 +23,7 @@ const SingUp = () => {
     useCreateUserWithEmailAndPassword(auth);
 
   const [updateProfile, updating, updateError] = useUpdateProfile(auth);
-
+  // user token here!
   const [token] = useToken(user || googleUser);
 
   const navigate = useNavigate();
@@ -157,10 +157,8 @@ const SingUp = () => {
           </form>
           <p className="text-center mt-1">
             <small>
-              {" "}
               Already have an account?
               <Link className="text-secondary" to="/login">
-                {" "}
                 Please Login
               </Link>
             </small>
