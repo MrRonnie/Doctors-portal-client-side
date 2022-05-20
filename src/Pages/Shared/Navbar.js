@@ -37,7 +37,7 @@ const Navbar = () => {
       <li>
         {user ? (
           <button className="btn btn-accent text-white" onClick={logout}>
-            Sing Out
+            Sign Out
           </button>
         ) : (
           <Link className="btn btn-accent text-white" to="/login">
