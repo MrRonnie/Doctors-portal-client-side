@@ -21,7 +21,7 @@ const Login = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
 
-  const [token] = useToken(user || user);
+  const [token] = useToken(user || googleUser);
 
   let singInError;
 
