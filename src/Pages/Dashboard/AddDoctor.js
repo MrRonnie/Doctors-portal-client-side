@@ -1,5 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useQuery } from "react-query";
+import Loading from "../Shared/Loading";
 
 const AddDoctor = () => {
   const {
@@ -8,9 +10,17 @@ const AddDoctor = () => {
     handleSubmit,
   } = useForm();
 
+  const { data: services, isLoading } = useQuery("services", () =>
+    fetch("http://localhost:5000/service").then((res) => res.json())
+  );
+
   const onSubmit = async (data) => {
     console.log("data", data);
   };
+
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
 
   return (
     <div>
@@ -76,33 +86,43 @@ const AddDoctor = () => {
           <label className="label">
             <span className="label-text">Specialty</span>
           </label>
+          <select
+            {...register("specialty")}
+            class="select input input-bordered w-full max-w-xs"
+          >
+            {services.map((service) => (
+              <option key={service._id} value={service.name}>
+                {service.name}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <div className="form-control w-full max-w-xs mt-5">
+          <label className="label">
+            <span className="label-text">Photo</span>
+          </label>
           <input
-            type="text"
-            placeholder="specialty"
-            className="input input-bordered w-full max-w-xs"
-            {...register("specialty", {
+            type="file"
+            className="input p-1.5 input-bordered w-full max-w-xs"
+            {...register("image", {
               required: {
                 value: true,
-                message: "Specialization is Required",
+                message: "Image is Required",
               },
             })}
           />
           <label className="label">
-            {errors.password?.type === "required" && (
+            {errors.name?.type === "required" && (
               <span className="label-text-alt text-red-500">
-                {errors.password.message}
-              </span>
-            )}
-            {errors.password?.type === "minLength" && (
-              <span className="label-text-alt text-red-500">
-                {errors.password.message}
+                {errors.name.message}
               </span>
             )}
           </label>
         </div>
 
         <input
-          className="btn w-full max-w-xs text-white"
+          className="btn w-full max-w-xs mt-5 text-white"
           type="submit"
           value="Add"
         />
