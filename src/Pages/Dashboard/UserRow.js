@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { toast } from "react-toastify";
 
 const UserRow = ({ user, refetch }) => {
@@ -25,7 +25,7 @@ const UserRow = ({ user, refetch }) => {
   };
   return (
     <tr>
-      <th>1</th>
+      <th>#</th>
       <td>{user.email}</td>
       <td>
         {role !== "admin" && (
