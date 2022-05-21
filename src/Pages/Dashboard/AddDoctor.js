@@ -1,6 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useQuery } from "react-query";
+import { toast } from "react-toastify";
 import Loading from "../Shared/Loading";
 
 const AddDoctor = () => {
@@ -14,10 +15,32 @@ const AddDoctor = () => {
     fetch("http://localhost:5000/service").then((res) => res.json())
   );
 
-  const onSubmit = async (data) => {
-    console.log("data", data);
-  };
+  //   For storage image in third party storage imgBB
+  const imgStorageKey = "9c6876786806d3dbb028b047daea8168";
 
+  const onSubmit = async (data) => {
+    const formData = new FormData();
+    const image = data.image[0];
+    formData.append("image", image);
+    const url = `https://api.imgbb.com/1/upload?key=${imgStorageKey}`;
+    fetch(url, {
+      method: "POST",
+      body: formData,
+    })
+      .then((res) => res.json())
+      .then((result) => {
+        if (result.success) {
+          const img = result.data.url;
+          const doctor = {
+            name: data.name,
+            email: data.email,
+            specialty: data.specialty,
+            img: img,
+          };
+          // send to your database
+        }
+      });
+  };
   if (isLoading) {
     return <Loading></Loading>;
   }
