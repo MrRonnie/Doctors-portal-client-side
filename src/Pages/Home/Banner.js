@@ -2,8 +2,10 @@ import React from "react";
 import chair from "../../assets/images/chair.png";
 import backgroundImg from "../../assets/images/bg.png";
 import PrimaryButton from "../Shared/PrimaryButton";
+import { useNavigate } from "react-router-dom";
 
 const Banner = () => {
+  const navigate = useNavigate();
   return (
     <div className="hero sm:min-h-screen justify-center">
       <div className="">
@@ -21,7 +23,9 @@ const Banner = () => {
             industry. Lorem Ipsum has been the industry's standard dummy text
             ever since the
           </p>
-          <PrimaryButton>Get Started</PrimaryButton>
+          <PrimaryButton>
+            <span onClick={() => navigate("/appointment")}>Book Now</span>
+          </PrimaryButton>
         </div>
       </div>
     </div>

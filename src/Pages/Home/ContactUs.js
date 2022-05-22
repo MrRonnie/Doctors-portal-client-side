@@ -18,7 +18,7 @@ const ContactUs = () => {
       </div>
       <div className="grid grid-cols-1 justify-items-center gap-5">
         <input
-          type="text"
+          type="email"
           placeholder="Email Address"
           className="input w-full max-w-md"
         />

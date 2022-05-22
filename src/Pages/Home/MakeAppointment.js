@@ -2,8 +2,10 @@ import React from "react";
 import doctor from "../../assets/images/doctor.png";
 import appointment from "../../assets/images/appointment.png";
 import PrimaryButton from "../Shared/PrimaryButton";
+import { useNavigate } from "react-router-dom";
 
 const MakeAppointment = () => {
+  const navigate = useNavigate();
   return (
     <section
       style={{ background: `url(${appointment})` }}
@@ -22,7 +24,9 @@ const MakeAppointment = () => {
           repellat eum enim blanditiis recusandae nobis ipsa vero, ullam ad
           magni itaque nulla aperiam molestiae!
         </p>
-        <PrimaryButton>Get Started</PrimaryButton>
+        <PrimaryButton>
+          <span onClick={() => navigate("/appointment")}>Book Appointment</span>
+        </PrimaryButton>
       </div>
     </section>
   );

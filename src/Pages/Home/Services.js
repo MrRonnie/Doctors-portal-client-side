@@ -6,8 +6,10 @@ import treatment from "../../assets/images/treatment.png";
 
 import Service from "./Service";
 import PrimaryButton from "../Shared/PrimaryButton";
+import { useNavigate } from "react-router-dom";
 
 const Services = () => {
+  const navigate = useNavigate();
   const services = [
     {
       _id: 1,
@@ -60,7 +62,9 @@ const Services = () => {
               here', making it look like readable English. Many desktop
               publishing packages and web page
             </p>
-            <PrimaryButton>Get Started</PrimaryButton>
+            <PrimaryButton>
+              <span onClick={() => navigate("/appointment")}>Book Now</span>
+            </PrimaryButton>
           </div>
         </div>
       </div>
