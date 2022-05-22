@@ -18,6 +18,7 @@ import RequireAdmin from "./Pages/Login/RequireAdmin";
 import AddDoctor from "./Pages/Dashboard/AddDoctor";
 import ManageDoctors from "./Pages/Dashboard/ManageDoctors";
 import NotFound from "./Pages/Shared/NotFound";
+import ResetPassword from "./Pages/Login/ResetPassword";
 
 function App() {
   return (
@@ -71,6 +72,7 @@ function App() {
           ></Route>
         </Route>
         <Route path="login" element={<Login />} />
+        <Route path="reset-password" element={<ResetPassword />} />
         <Route path="signup" element={<SignUp />} />
 
         <Route path="*" element={<NotFound />} />

@@ -93,7 +93,14 @@ const Login = () => {
             <div className="form-control w-full max-w-xs">
               <label className="label">
                 <span className="label-text">Password</span>
+                <Link
+                  to="/reset-password"
+                  className="ml-auto text-sm  text-secondary hover:text-blue-500 cursor-pointer"
+                >
+                  Forget Password?
+                </Link>
               </label>
+
               <input
                 type="password"
                 placeholder="Password"
@@ -135,7 +142,10 @@ const Login = () => {
             <small>
               {" "}
               New to Doctors Portal?
-              <Link className="text-secondary" to="/signup">
+              <Link
+                className="text-secondary hover:text-blue-500 cursor-pointer"
+                to="/signup"
+              >
                 {" "}
                 Create New Account
               </Link>
