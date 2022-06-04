@@ -19,9 +19,10 @@ const Banner = () => {
         <div className="">
           <h1 className="text-5xl font-bold">Your New Smile Starts Here</h1>
           <p className="py-6">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the
+            We offer all the treatments you'd expect from a general dentist,
+            plus same-day emergency care and oral sedation options to reduce
+            anxiety. Not sure what your smile needs? Start with an exam and
+            cleaning and we'll go from there!
           </p>
           <PrimaryButton>
             <span onClick={() => navigate("/appointment")}>Book Now</span>

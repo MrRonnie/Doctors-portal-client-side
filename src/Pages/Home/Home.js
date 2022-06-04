@@ -1,6 +1,7 @@
 import React from "react";
 import Footer from "../Shared/Footer";
 import Banner from "./Banner";
+import BusinessSummary from "./BusinessSummary";
 import ContactUs from "./ContactUs";
 import Info from "./Info";
 import MakeAppointment from "./MakeAppointment";
@@ -12,6 +13,7 @@ const Home = () => {
     <div className="px-10">
       <Banner></Banner>
       <Info></Info>
+      <BusinessSummary></BusinessSummary>
       <Services></Services>
       <MakeAppointment></MakeAppointment>
       <Testimonials></Testimonials>

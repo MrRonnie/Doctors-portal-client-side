@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { toast } from "react-toastify";
 
 const UserRow = ({ user, index, refetch }) => {
-  const { email, role } = user;
+  const { email, role, name } = user;
   const makeAdmin = () => {
     fetch(`https://glacial-falls-98864.herokuapp.com/user/admin/${email}`, {
       method: "PUT",
@@ -27,15 +27,22 @@ const UserRow = ({ user, index, refetch }) => {
     <tr>
       <th>{index + 1}</th>
       <td>{user.email}</td>
-      <td>
-        {role !== "admin" && (
-          <button onClick={makeAdmin} class="btn btn-xs text-white">
+      <td className="">
+        {user?.role === "admin" ? (
+          <span className="bg-gray-600 text-white px-8 font-semibold rounded-md ">
+            Admin
+          </span>
+        ) : (
+          <button
+            onClick={makeAdmin}
+            className="bg-emerald-500 text-white px-3 rounded"
+          >
             Make Admin
           </button>
         )}
       </td>
       <td>
-        <button class="btn btn-xs text-white">Remove</button>
+        <button class="btn btn-xs loading">loading</button>
       </td>
     </tr>
   );

@@ -9,7 +9,7 @@ const Info = () => {
     <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
       <InfoCard
         cardTitle="Opening Hours"
-        cardDetail="Open Everyday 11:00 AM to 7:00 PM"
+        cardDetail="Open Everyday 8:00 AM to 5:00 PM"
         bgClass=" bg-gradient-to-r from-secondary to-primary"
         img={clock}
       ></InfoCard>
